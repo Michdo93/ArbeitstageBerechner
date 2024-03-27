@@ -145,7 +145,7 @@ if __name__ == "__main__":
 Im Konstruktor muss die Jahreszahl geändert werden. Wenn kein Parameter angegeben ist, wird die aktuelle Jahreszahl verwendet. Der Standardparameter ist:
 
 ```
-jahr=datetime.datetime.now().year,
+jahr=datetime.datetime.now().year
 ```
 
 Dies bedeutet, dass vom aktuellen System wo das Python-Skript ausgeführt wird, die Jahreszahl generiert wird.
