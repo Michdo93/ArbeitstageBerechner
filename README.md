@@ -269,6 +269,25 @@ Man erhält:
 Bundesländer: {'Baden-Württemberg': 'BW', 'Bayern': 'BY', 'Berlin': 'BE', 'Brandenburg': 'BB', 'Bremen': 'HB', 'Hamburg': 'HH', 'Hessen': 'HE', 'Mecklenburg-Vorpommern': 'MV', 'Niedersachsen': 'NI', 'Nordrhein-Westfalen': 'NW', 'Rheinland-Pfalz': 'RP', 'Saarland': 'SL', 'Sachsen': 'SN', 'Sachsen-Anhalt': 'ST', 'Schleswig-Holstein': 'SH', 'Thüringen': 'TH'}
 ```
 
+### Anpassen der Urlaubstage
+
+Es wird vom Bundesland bzw. von Deutschland ausgegangen und nicht von einer Person. Im Konstruktor kann man aber ebenfalls seine Urlaubstage angeben und dann weiß man, wie viel man wirklich gearbeitet hat. Hier wird jedoch nicht unterschieden, ob diese betriebsbedingt waren, ob Überstunden abgefeiert wurden usw. Es muss nicht so präzise erfasst werden, wie beim Arbeitgeber. Daher reicht der Parameter `urlaubstage` für dieses Programm aus. Ein Beispiel sieht, wie folgt aus:
+
+```
+if __name__ == "__main__":
+    berechner = ArbeitstageBerechner(urlaubstage=30, bundesland="Baden-Württemberg")
+    arbeitstage = berechner.berechne_arbeitstage()
+    print("Arbeitstage Baden-Würrtemberg:", arbeitstage)
+```
+
+Man erhält für das Jahr 2024 demnach:
+
+```
+Arbeitstage Baden-Würrtemberg: 221
+```
+
+Wie wir vorhin bereits gesehen haben, wäre das Jahr 2024 mit 251 Arbeitstagen in Baden-Württemberg. Zieht man davon dann 30 Urlaubstage ab, kommt man auf 221 Tage. Es ist eine einfache Subtraktion. An Feiertagen kann man nämlich keinen Urlaub nehmen!
+
 ### Weitere Parameter am Beispiel Bayern:
 
 Es gibt folgende Standardparameter:
